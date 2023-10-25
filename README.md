@@ -1,0 +1,173 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# Carbon emission modelling using remotely sensed data from disturbances in Canada
+
+Chinyere Ottah<sup>a</sup>, Alemu Gonsamo<sup>b</sup>
+
+School of Earth, Environment and Society<sup>a,b</sup>, McMaster
+University, Hamilton, Ontario, Canada
+
+# Abstract
+
+Wildfire is the major standing disturbance in Canada. The area burned in
+Canada over the years has continued to progress with climate change as
+well as carbon released due to fire mediated disturbances for the year
+2023. Here, statistical models will be established between field
+combustion and remotely sensed data from Landsat imagery as well as
+other environmental and climate variables obtained from the GEE datasets
+to estimate carbon emitted from the 2023 wildfires in order to derive a
+combustion map for 2023. The combustion datasets described here can be
+used across local and global scale for fire combustion science. The
+combustion datasets which will be described here
+\[github.com/ChinyereRuth/Canada-Carbon-emission-RDM\] can be used for
+local to continental-scale applications of boreal fire science.
+
+Keywords: Wildfire, carbon, spatial modelling, boreal forests
+
+Corresponding author’s e-mail addresses: <ottahchinyere2@gmail.com>
+
+# Specification Table
+
+| Subject                                                                 | Geography, Environmental Science, Remote Sensing, Computer Science, Climate studies                                                                                                                                         |
+|-------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Specific subject area                                                   | Tree Carbon in boreal forests, Remote Sensing modelling, Environmental Science climate processing                                                                                                                           |
+| Type of data                                                            | Raster data (Tif file type)                                                                                                                                                                                                 |
+|                                                                         | Excel data (CSV)                                                                                                                                                                                                            |
+|                                                                         | Code files (html)                                                                                                                                                                                                           |
+| Method of data acquisition                                              | Predictor and Explana tory data were acquired online                                                                                                                                                                        |
+|                                                                         | Field combustion data was acquired: The ABoVE Fire Emissions Database                                                                                                                                                       |
+|                                                                         | USGS Earth Explorer: Landsat 8 band 1-9                                                                                                                                                                                     |
+|                                                                         | GEE Climate variables: Precipitation, humidity, minimum and maximum temperature.                                                                                                                                            |
+|                                                                         | ASTER DEM: Digital elevation                                                                                                                                                                                                |
+| Data format                                                             | Processed                                                                                                                                                                                                                   |
+| Description of data acquisition                                         | Field combustion dataset were acquired from the above fire emissions derived from Potter et al. 2023 [^1].                                                                                                                  |
+| For prediction of Carbon emissions, we used different covariate layers: | • Time-series 2014 and 2015 : USGS Landsat bands \[^7^\], Optical vegetation indices, GEE Climate variables (Humidity, precipitation, mean, min. and max. air temperature, ASTER DEM                                        |
+| Location of data source                                                 | Landsat bands: [^2]                                                                                                                                                                                                         |
+|                                                                         | GEE climate dataset: [^3]                                                                                                                                                                                                   |
+|                                                                         | ASTER DEM: [^4]                                                                                                                                                                                                             |
+| Accessibility of data                                                   | The predicted carbon emission dataset will be found at 30 m resolution in the following repository [^5] : Repository name: Chinyereruth Data identification number: Still in progress Direct URL to data: Still in progress |
+|                                                                         | Detailed code associated with the data analysis is available from the Github repository \[^12^\]                                                                                                                            |
+
+# VALUE OF DATA
+
+• The map provides the amount of carbon emission from trees from
+Canada’s boreal forests, using statistical methods such as regression
+and machine learning. • The map will support research on Carbon emission
+models, and climate change assessment and can be used to inform climate
+and fire scientists on carbon accounting and reporting, and also
+recommend measures to reduce carbon emission footprints. It can also be
+used to compare carbon emissions from other boreal forest zones. • The
+methods that will be outlined and code that will be provided can also be
+replicated in other locations and zones to derive carbon emission maps.
+
+# Objective
+
+The main objective of this research is to estimate the carbon that was
+released as a result of wildfires from Canada boreal forest for the year
+2023 using optical remotely sensed data and field combustion data. More
+specifically, I used Landsat band 1-7+ climate variables+ environmental
+variables+ soil variables as predictors). We used a Monte Carlos method
+to access the uncertainty of the final model.
+
+# Data Description
+
+Predictors will be provided within the domain of the boreal forest in a
+folder called the “carbon-emission-modelling-2023.zip”. Carbon emitted
+from each province will be named according to its geographic location
+(i.e. 059E_14N corresponds to 59E to 60E, 14N to 15N). The
+“pronvince_carbon_emission_2023.Tif”file will contain carbon emissions
+for each province within Canada and the
+“Canada_Carbon_emission_2023.tif”file contains the final carbon emission
+map for the entire Canada . The detailed code associated with this
+project will be found in the Github repository (https:
+//github.com/Chinyereruth/carbon-emission ), allowing for the prediction
+applied here to be replicated. In addition, the code used for this
+folder will be found in “carbon-emission-Canada-2023- code. Rmd” which
+will be located in the main GitHub repository folder.
+
+# Table 1 Files used in the study for wildfire carbon emission modelling in Canada for the year 2023
+
+| File description                         | File name                              |
+|------------------------------------------|----------------------------------------|
+| Predicted Carbon emitted for Canada 2023 | Carbon-emiss-Can\_ JanDec_2023-30m.tif |
+| Minimum temperature for Canada 2023      | Min-temp-Can\_ JanDec_2023-30m.tif     |
+| Maximum temperature for Canada 2023      | Max-temp-Can\_ JanDec_2023-30m.tif     |
+| Soil data for Canada 2023                | Soil-Can\_ JanDec_2023-30m.tif         |
+| NDVI data for Canada 2023                | NDVI-Can\_ JanDec_2023-30m.tif         |
+| Tree cover for Canada 2023               | Treecov-Can\_ JanDec_2023-30m.tif      |
+
+# Experimental Design, Materials and Methods
+
+## Training data
+
+I used a compilation of field carbon combustion data obtained from the
+ABoVE Fire Emissions Database (n=500). This field combustion data that
+were collected across Alberta, Saskatchewan, Manitoba and North Western
+Territories.
+
+## Covariate layers
+
+Combustion measurements that were obtained from ABoVE fire database were
+related to covariates of remotely sensed variables for fire severity,
+elevation, soil and climate.
+
+### Climate variables
+
+Climate data for minimum and maximum temperature were obtained from
+Climate ClimateNA using the GEE climate hub portal for the year 2023.
+The climate data used here provided the climate point estimate in
+degrees Celsius which was imported in the spatial environment. The data
+upscaled to a 30 m grid. This helped to capture the climate impact on
+vegetation, fuel loads, and fuel moisture, which affect combustion
+losses.
+
+### Environmental variables
+
+I used a variety of environmental variables. This includes soils,
+topography and vegetation category. The soil data was gotten at 250 m
+resolution but this was upscaled. Topographic variables that will be
+derived include aspect (∘), elevation (m),
+
+and slope (∘) at a 30 m pixel size.
+
+### Remotely sensed variables
+
+Here, I derived various remotely sensed vegetation indices from Landsat,
+and this includes NDVI, the normalized difference infrared index (NDII)
+and the dNBR. All images used were atmospherically and geometrically
+corrected using the correction and geometric tool in R.
+
+## Model training
+
+For the model training, remotely sensed variables, climate and
+environmental variables were used. Areas of clouds, cloud shadows, and
+snow were extracted out using an extraction function in R.
+
+## Spatial carbon modelling
+
+The results from this research are still in progress. Preliminary
+results are displayed here.
+
+## Ethic statement
+
+This study did not use human subjects, experiments carried out on
+animals, and did not also acquire any data from social media platforms.
+
+## Data availability
+
+Carbon emission modelling from wildfire disturbances in Canada at 30 m
+resolution for the year 2023 will be available at
+Github/ChinyereRuth/carbon-emission.
+
+# References
+
+[^1]: Potter et al. 2023
+
+[^2]: <https://earthexplorer.usgs.gov/>
+
+[^3]: <https://developers.google.com/earth-engine/datasets/tags/climate>
+
+[^4]: <https://www.earthdata.nasa.gov/>
+
+[^5]: \[github.com/ChinyereRuth/Canada-Carbon-emission-RDM\]
