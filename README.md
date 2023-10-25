@@ -1,3 +1,7 @@
+Assignment on Research Data Management
+================
+Chinyere OttahSchool of Earth, Environment and SocietyMcMaster
+University, Hamilton, Ontario, Canada
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 

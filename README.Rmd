@@ -1,5 +1,10 @@
 ---
 output: github_document
+title: "Assignment on Research Data Management"
+author: 
+  - Chinyere Ottah
+  - School of Earth, Environment and Society
+  - McMaster University, Hamilton, Ontario, Canada
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
